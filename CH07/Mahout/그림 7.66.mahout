@@ -1,0 +1,1 @@
+mahout split -i /pilot-pjt/mahout/classification/input --trainingOutput /pilot-pjt/mahout/classification/input/training --testOutput /pilot-pjt/mahout/classification/input/testing --randomSelectionPct 30 --overwrite --method sequential

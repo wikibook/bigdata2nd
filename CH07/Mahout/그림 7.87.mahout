@@ -1,0 +1,8 @@
+
+#K-Means 결과 파일 생성
+mahout clusterdump -i /pilot-pjt/mahout/clustering/kmeans/output/clusters-*-final -p /pilot-pjt/mahout/clustering/kmeans/output/clustersPoints -o /home/pilot-pjt/mahout-data/clustering/output/clusterdump_result.txt
+
+
+
+#K-Means 결과 파일 확인
+more /home/pilot-pjt/mahout-data/clustering/output/clusterdump_result.txt

@@ -1,0 +1,7 @@
+
+# 군집에 포함된 차량 추출
+mahout seqdumper -i /pilot-pjt/mahout/clustering/kmeans/output/clusteredPoints/ -o /home/pilot-pjt/mahout-data/clustering/output/seqdumper_result.txt
+
+
+# 군집에 포함된 차량 확인
+grep "Key: 1418" /home/pilot-pjt/mahout-data/clustering/output/seqdumper_result.txt

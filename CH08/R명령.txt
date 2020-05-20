@@ -1,0 +1,42 @@
+> install.packages("DBI")
+> install.packages("rJava")
+> install.packages("RJDBC")
+> install.packages("log4r")
+
+> library("DBI")
+> library("rJava")
+> library("RJDBC")
+
+> hive.class.path = list.files(path=c("C://hiveJar"), pattern="jar", full.names=T);
+> hadoop.lib.path = list.files(path=c("C://hadoopJar"), pattern="jar", full.names=T);
+> hadoop.class.path = list.files(path=c("C://hadoopJar"), pattern="jar", full.names=T);
+> class.path = c(hive.class.path, hadoop.lib.path, hadoop.class.path);
+> .jinit(classpath=class.path)
+
+
+
+> drv <- JDBC("org.apache.hive.jdbc.HiveDriver", "C://hiveJar/hive-jdbc-2.1.1-cdh6.3.2.jar",identifier.quote="`")
+> conn <- dbConnect(drv, "jdbc:hive2://server02.hadoop.com:10000/default", "hive1","3NaqrsjYhj")
+
+
+
+> dbListTables(conn);
+
+
+> data <- dbGetQuery(conn, "select * from smartcar_master2income")
+> View(data)
+
+
+> hist(data$smartcar_master2income.income)
+> boxplot(data$smartcar_master2income.income)
+> qqnorm(data$smartcar_master2income.income)
+> qqline(data$smartcar_master2income.incom)
+
+
+
+> model <- lm(data$smartcar_master2income.income~smartcar_master2income.car_capacity,data=data)
+> summary(model)
+
+
+> test_data <- read.csv("C://test_data/CarMaster2Income_Test.txt", sep="|", header=T, encoding = "UTF-8")
+> predict(model, test_data, interval = "prediction")

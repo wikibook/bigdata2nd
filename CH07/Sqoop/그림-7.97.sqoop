@@ -1,0 +1,1 @@
+sqoop export --connect jdbc:postgresql://127.0.0.1:7432/postgres --username cloudera-scm --password acjZt03D1Q --table smartcar_symptom_info --export-dir /user/hive/warehouse/managed_smartcar_symptom_info

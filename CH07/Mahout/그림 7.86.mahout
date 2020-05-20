@@ -1,0 +1,1 @@
+mahout kmeans -i /pilot-pjt/mahout/clustering/output/vec/tf-vectors -c /pilot-pjt/mahout/clustering/kmeans/output/cluster -o /pilot-pjt/mahout/clustering/kmeans/output -dm org.apache.mahout.common.distance.SquaredEuclideanDistanceMeasure -cd 1.0 -k 200 -x 20 -cl -xm mapreduce -ow

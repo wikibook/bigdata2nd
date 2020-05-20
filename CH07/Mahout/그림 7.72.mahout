@@ -1,0 +1,1 @@
+java -cp bigdata.smartcar.mahout-1.0.jar com.wikibook.bigdata.smartcar.mahout.ClassifySmartCarStatus 2000 2000 A 80 80 80 80 1 1 1 1 A B 80

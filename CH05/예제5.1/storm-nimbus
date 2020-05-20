@@ -1,0 +1,74 @@
+#!/bin/bash
+#
+# /etc/init.d/storm-nimbus
+#
+# Startup script for storm-nimbus
+#
+# chkconfig: 2345 20 80
+# description: Starts and stops storm-nimbus
+#. /etc/init.d/functions
+stormBin=/home/pilot-pjt/storm/bin/storm
+stormSvc=$(echo $0 | cut -d'-' -f2)
+desc="Storm $stormSvc daemon"
+outFile="/var/log/storm/storm-$stormSvc.out"
+stormUser=root
+pidFile=/var/run/storm/storm-$stormSvc.pid
+
+if ! [ -f $stormBin ]; then
+  echo "storm binary not found."
+  exit 5
+fi
+
+if [ -f /etc/sysconfig/storm ]; then
+  . /etc/sysconfig/storm
+fi
+
+start() {
+  echo "Starting $desc (storm-$stormSvc): "
+  su $stormUser -c "nohup $stormBin $stormSvc >>$outFile 2>&1 &"
+  RETVAL=$?
+	
+  return $RETVAL
+}
+
+stop() {
+  echo "Shutting down $desc (storm-$stormSvc): "
+  if [ $stormSvc == "ui" ]; then
+    pkill -f storm.ui.core
+  else
+    pkill -f storm.daemon.$stormSvc
+  fi
+	[ -e $pidFile ] && rm $pidFile
+}
+
+restart() {
+    stop
+    start
+}
+
+status() {
+  if [ $stormSvc == "ui" ]; then
+     pid=$(pgrep -f storm.ui.core)
+  else
+     pid=$(pgrep -f storm.daemon.$stormSvc)
+  fi
+    
+  if [ -z $pid ]; then
+    echo "storm-$stormSvc is NOT running."
+		RETVAL=1
+  else
+    echo "storm-$stormSvc is running (pid is $pid)."
+		RETVAL=0
+  fi
+
+}
+
+case "$1" in
+  start)   start;;
+  stop)    stop;;
+  restart) restart;;
+  status)  status;;
+  *)       echo "Usage: $0 {start|stop|restart}"
+           RETVAL=2;;
+esac
+exit $RETVAL

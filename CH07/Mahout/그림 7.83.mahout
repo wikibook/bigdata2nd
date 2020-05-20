@@ -1,0 +1,5 @@
+# 캐노피 클러스터 수행
+mahout canopy -i /pilot-pjt/mahout/clustering/output/vec/tf-vectors/ -o /pilot-pjt/mahout/clustering/canopy/out -dm org.apache.mahout.common.distance.SquaredEuclideanDistanceMeasure -t1 50 -t2 45 -ow
+
+# 캐노피 클러스터 결과 확인
+mahout clusterdump -i /pilot-pjt/mahout/clustering/canopy/out/clusters-*-final

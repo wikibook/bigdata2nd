@@ -1,0 +1,1 @@
+alter table SmartCar_Status_Info add if not exists partition(wrk_date='${working_day}');

@@ -1,0 +1,7 @@
+
+# 키워드 추출 명령
+mahout clusterdump -dt sequencefile -d /pilot-pjt/mahout/clustering/output/vec/dictionary.file-* -i /pilot-pjt/mahout/clustering/kmeans/output/clusters-*-final -o /home/pilot-pjt/mahout-data/clustering/output/clusterdump_result2.txt -b 10 -n 10 -dm org.apache.mahout.common.distance.SquaredEuclideanDistanceMeasure
+
+
+# 추출된 키워드 확인
+grep -11 ":VL-1418" /home/pilot-pjt/mahout-data/clustering/output/clusterdump_result2.txt

@@ -1,0 +1,1 @@
+LOAD DATA LOCAL INPATH '/home/pilot-pjt/working/CarMaster2Income.txt' OVERWRITE INTO TABLE SmartCar_Master2Income;

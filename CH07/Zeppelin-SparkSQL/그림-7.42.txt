@@ -1,0 +1,1 @@
+hdfs dfs -cat /user/hive/warehouse/managed_smartcar_drive_info/biz_date=20200322/* | head

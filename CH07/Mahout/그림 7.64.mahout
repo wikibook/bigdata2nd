@@ -1,0 +1,1 @@
+hadoop jar /opt/cloudera/parcels/CDH/lib/mahout/mahout-examples-job.jar org.apache.mahout.classifier.df.tools.Describe -p /pilot-pjt/mahout/classification/input/classification_dataset.txt -f /pilot-pjt/mahout/classification/output/descriptor/smartcar-status.descriptor -d I I I I I N N C N N N N N N N N C C N L

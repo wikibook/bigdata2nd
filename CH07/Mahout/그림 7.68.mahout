@@ -1,0 +1,1 @@
+hadoop jar /opt/cloudera/parcels/CDH/lib/mahout/mahout-examples-job.jar org.apache.mahout.classifier.df.mapreduce.BuildForest -Dmapred.max.split.size=1874231 -d /pilot-pjt/mahout/classification/input/training/classification_dataset.txt -ds /pilot-pjt/mahout/classification/output/descriptor/smartcar-status.descriptor -sl 7 -p -t 100 -o /pilot-pjt/mahout/classification/output/model

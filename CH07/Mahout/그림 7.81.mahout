@@ -1,0 +1,1 @@
+mahout seq2sparse -i /pilot-pjt/mahout/clustering/output/seq -o /pilot-pjt/mahout/clustering/output/vec -wt tf -s 5 -md 3 -ng 2 -x 85 --namedVector

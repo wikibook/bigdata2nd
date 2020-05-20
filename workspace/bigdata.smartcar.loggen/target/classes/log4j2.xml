@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration>
+	<Appenders>
+	 <File name="carFile" fileName="${sys:logFilename}" append="false">
+        <PatternLayout pattern="%msg%n"/>
+    </File>
+
+	</Appenders>
+	
+	<Loggers>
+		<Logger name="info" level="INFO" additivity="false">
+			<AppenderRef ref="carFile"/>
+		</Logger>
+		
+		<Root level="INFO">
+			<AppenderRef ref="carFile" />
+		</Root>
+	</Loggers>
+</Configuration>

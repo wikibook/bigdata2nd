@@ -1,0 +1,1 @@
+hadoop jar /home/pilot-pjt/mahout-data/bigdata.smartcar.mahout-1.0.jar com.wikibook.bigdata.smartcar.mahout.TextToSequence /pilot-pjt/mahout/clustering/input/000000_0 /pilot-pjt/mahout/clustering/output/seq
