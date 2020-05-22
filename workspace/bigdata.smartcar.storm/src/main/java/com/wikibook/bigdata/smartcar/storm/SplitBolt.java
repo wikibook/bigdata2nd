@@ -14,8 +14,7 @@ public class SplitBolt extends BaseBasicBolt{
 
 	public void execute(Tuple tuple, BasicOutputCollector collector) {
 
-		String tValue = tuple.getString(4);  
-		
+		String tValue = tuple.getString(0);  
 
 		String[] receiveData = tValue.split("\\,");
 		//발생일시(14자리), 차량번호, 가속페달, 브레이크페달, 운전대회적각, 방향지시등, 주행속도, 뮤직번호

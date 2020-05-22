@@ -33,14 +33,14 @@ public class EsperBolt extends BaseBasicBolt{
 
 		espService = EPServiceProviderManager.getDefaultProvider(configuration);
 		espService.initialize();
-		
+
 		int avgOverSpeed = 80;
 		int windowTime  = 30;
-		
+
 		String overSpeedEpl =  "SELECT date, carNumber, speedPedal, breakPedal, "
-								+ "steerAngle, directLight, speed , areaNumber "
-								+ " FROM DriverCarInfoBean.win:time_batch("+windowTime+" sec) "
-								+ " GROUP BY carNumber HAVING AVG(speed) > " + avgOverSpeed;
+				+ "steerAngle, directLight, speed , areaNumber "
+				+ " FROM DriverCarInfoBean.win:time_batch("+windowTime+" sec) "
+				+ " GROUP BY carNumber HAVING AVG(speed) > " + avgOverSpeed;
 
 		EPStatement driverCarinfoStmt = espService.getEPAdministrator().createEPL(overSpeedEpl);
 
@@ -51,12 +51,11 @@ public class EsperBolt extends BaseBasicBolt{
 
 	public void execute(Tuple tuple, BasicOutputCollector collector) {
 
-		// TODO Auto-generated method stub
-		String tValue = tuple.getString(4); 
-		
+		String tValue = tuple.getString(0); 
+
 		//발생일시(14자리), 차량번호, 가속페달, 브레이크페달, 운전대회적각, 방향지시등, 주행속도, 뮤직번호
 		String[] receiveData = tValue.split("\\,");
-
+		
 		DriverCarInfoBean driverCarInfoBean =new DriverCarInfoBean();
 
 		driverCarInfoBean.setDate(receiveData[0]);
@@ -74,9 +73,10 @@ public class EsperBolt extends BaseBasicBolt{
 		if(isOverSpeedEvent) {
 			//발생일시(14자리), 차량번호
 			collector.emit(new Values(	driverCarInfoBean.getDate().substring(0,8), 
-										driverCarInfoBean.getCarNumber()+"-"+driverCarInfoBean.getDate()));
+					driverCarInfoBean.getCarNumber()+"-"+driverCarInfoBean.getDate()));
 			isOverSpeedEvent = false;
 		}
+		
 
 	}
 

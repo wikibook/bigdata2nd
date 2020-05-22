@@ -1,56 +1,76 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-  <modelVersion>4.0.0</modelVersion>
+<?xml version="1.0" encoding="UTF-8"?>
 
-  <groupId>com.wikibook</groupId>
-  <artifactId>bigdata.smartcar.storm</artifactId>
-  <version>1.0</version>
-  <packaging>jar</packaging>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
 
-  <name>bigdata.smartcar.storm</name>
-  <url>http://maven.apache.org</url>
+	<groupId>com.wikibook</groupId>
+	<artifactId>bigdata.smartcar.storm</artifactId>
+	<version>1.0</version>
 
- 	<properties>
-		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-	</properties>
+	<name>bigdata.smartcar.storm</name>
+	<!-- FIXME change it to the project's website -->
+	<url>http://www.example.com</url>
+
+
 
 	<dependencies>
 
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>4.11</version>
+			<scope>test</scope>
+		</dependency>
 
 		<dependency>
 			<groupId>org.apache.storm</groupId>
 			<artifactId>storm-core</artifactId>
-			<version>0.9.6</version>
+			<version>1.2.3</version>
 			<scope>provided</scope>
 		</dependency>
-
 
 		<dependency>
 			<groupId>org.apache.storm</groupId>
 			<artifactId>storm-kafka</artifactId>
-			<version>0.9.6</version>
+			<version>1.2.3</version>
+			<exclusions>
+				<exclusion>
+					<groupId>org.apache.kafka</groupId>
+					<artifactId>kafka-clients</artifactId>
+				</exclusion>
+			</exclusions>
 		</dependency>
-
-
-		<dependency>
-			<groupId>org.apache.storm</groupId>
-			<artifactId>storm-redis</artifactId>
-			<version>0.10.0</version>
-		</dependency>
-
-
+	
+		<!-- https://mvnrepository.com/artifact/org.apache.kafka/kafka -->
 		<dependency>
 			<groupId>org.apache.kafka</groupId>
-			<artifactId>kafka_2.9.2</artifactId>
-			<version>0.8.1.1</version>
+			<artifactId>kafka_2.12</artifactId>
+			<version>1.1.1</version>
 			<exclusions>
 				<exclusion>
 					<groupId>org.apache.zookeeper</groupId>
 					<artifactId>zookeeper</artifactId>
 				</exclusion>
-				
-
+				<exclusion>
+					<groupId>log4j</groupId>
+					<artifactId>log4j</artifactId>
+				</exclusion>
+				<exclusion>
+					<groupId>org.slf4j</groupId>
+					<artifactId>slf4j-log4j12</artifactId>
+				</exclusion>
 			</exclusions>
+		</dependency>
+
+
+
+		<dependency>
+			<groupId>org.apache.storm</groupId>
+			<artifactId>storm-redis</artifactId>
+			<version>1.1.1</version>
+
 		</dependency>
 
 
@@ -84,14 +104,12 @@
 		</dependency>
 
 
-
+		<!-- https://mvnrepository.com/artifact/org.apache.hbase/hbase-client -->
 		<dependency>
 			<groupId>org.apache.hbase</groupId>
 			<artifactId>hbase-client</artifactId>
-			<version>0.98.1-hadoop2</version>
-
+			<version>1.6.0</version>
 		</dependency>
-
 
 		<dependency>
 			<groupId>com.espertech</groupId>
@@ -99,21 +117,6 @@
 			<version>4.11.0</version>
 
 		</dependency>
-		
-		
-		  <dependency>
-			<groupId>org.slf4j</groupId>
-			<artifactId>slf4j-api</artifactId>
-			<version>1.7.5</version>
-			<scope>provided</scope>
-		</dependency>
-		<dependency>
-			<groupId>org.slf4j</groupId>
-			<artifactId>slf4j-log4j12</artifactId>
-			<version>1.7.5</version>
-			<scope>provided</scope>
-		</dependency> 
-
 
 	</dependencies>
 
