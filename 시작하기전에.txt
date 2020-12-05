@@ -35,7 +35,7 @@
 * 공통                    
 ##########################
 
-1. yum install 명령시 "removing mirrorlist with no valid mirrors:.." 발생하면 해당 서버에 putty로 접속후 아래 명령 실행
+1. yum install 명령시 "removing mirrorlist with no valid mirrors:.." 발생하면 아래 명령 실행
 
 echo "http://vault.centos.org/6.10/os/x86_64/" > /var/cache/yum/x86_64/6/base/mirrorlist.txt
 echo "http://vault.centos.org/6.10/extras/x86_64/" > /var/cache/yum/x86_64/6/extras/mirrorlist.txt
