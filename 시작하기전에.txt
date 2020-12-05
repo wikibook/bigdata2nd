@@ -34,7 +34,7 @@ echo "http://vault.centos.org/6.10/updates/x86_64/" > /var/cache/yum/x86_64/6/up
 echo "http://vault.centos.org/6.10/sclo/x86_64/rh" > /var/cache/yum/x86_64/6/centos-sclo-rh/mirrorlist.txt
 echo "http://vault.centos.org/6.10/sclo/x86_64/sclo" > /var/cache/yum/x86_64/6/centos-sclo-sclo/mirrorlist.txt
 
-2. Page 238 : 3번째 라인에 pip install python-pip 설치가 실패할때 아래 명령으로 EPEL 저장소를 활성화
+2. Page 238 : 3번째 라인에 yum install python-pip 설치가 실패할때 아래 명령으로 EPEL 저장소를 활성화
           ==> $ yum --enablerepo=extras install epel-release
 
            
