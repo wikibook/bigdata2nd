@@ -1,0 +1,37 @@
+﻿---------------------------------------------------------------------------------------------------------------
+##########################
+* 개정2판 1쇄 오류: 1~7번 
+##########################
+
+1. Page 56 : "05. Server01 가상머신 [닫기] → [전원 끄기]를 선택해 종료한다." 를 아래 내용으로 변경
+          ==> 05. 타임존을 Asis/Seoul로 선택하고, 하단의 "System clock uses UTC"를 체크 한다.
+          
+2. Page 90 : 하단에 "Hbase 서비스:" 라는 내용 삭제
+
+3. Page 122 : 하단에서 5번째줄의 카프카 리텐션 15분 ==> 10분으로 변경
+
+4. Page 140 : 그림 4.4의 100GB → 100MB로 수정
+
+5. Page 332 : "그림 7.43 제플린 노트북 - 스파크 데이터 로드" 잘못 표기 됨. 
+           ==> "C://예제소스/bigdata2nd-master/CH07/Zeppelin-SparkSQL/그림-7.43.sql" 파일의 내용이 표기 되어야 함
+
+6. Page 333 : 상단의 "예제 7.1의 마지막 줄을.." ==> "그림 7.43 코드의 마지막 줄을.."로 변경
+
+7. Page 350 : Confusion Matrix 결과 해석 수정 및 보완 
+           ==> GitHub에 올라와 있는 별도 파일 참조 - [페이지 350]_Confusion Matrix 결과 해석-수정 및 보완.pdf
+           
+---------------------------------------------------------------------------------------------------------------
+##########################
+* 공통 오류: 1~2번                 
+##########################
+
+1. yum install 명령시 "removing mirrorlist with no valid mirrors:.." 발생하면 아래 명령 실행
+
+echo "http://vault.centos.org/6.10/os/x86_64/" > /var/cache/yum/x86_64/6/base/mirrorlist.txt
+echo "http://vault.centos.org/6.10/extras/x86_64/" > /var/cache/yum/x86_64/6/extras/mirrorlist.txt
+echo "http://vault.centos.org/6.10/updates/x86_64/" > /var/cache/yum/x86_64/6/updates/mirrorlist.txt
+echo "http://vault.centos.org/6.10/sclo/x86_64/rh" > /var/cache/yum/x86_64/6/centos-sclo-rh/mirrorlist.txt
+echo "http://vault.centos.org/6.10/sclo/x86_64/sclo" > /var/cache/yum/x86_64/6/centos-sclo-sclo/mirrorlist.txt
+
+2. Page 238 : 3번째 라인에 yum install python-pip 설치가 실패할때 아래 명령으로 EPEL 저장소를 활성화
+          ==> $ yum --enablerepo=extras install epel-release
