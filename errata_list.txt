@@ -18,14 +18,17 @@
 6. Page 333 : 상단의 "예제 7.1의 마지막 줄을.." ==> "그림 7.43 코드의 마지막 줄을.."로 변경
 
 7. Page 350 : Confusion Matrix 결과 해석 수정 및 보완 
-           ==> GitHub에 올라와 있는 별도 파일 참조 - [페이지 350]_Confusion Matrix 결과 해석-수정 및 보완.pdf
+           ==> 참조 파일 - [페이지 350]_Confusion Matrix 결과 해석-수정 및 보완.pdf
            
 ---------------------------------------------------------------------------------------------------------------
 ##########################
 * 공통 참고 및 오류: 1~2번                 
 ##########################
 
-1. yum install 명령시 "removing mirrorlist with no valid mirrors:.." 발생하면 아래 명령 실행
+1. Page 49~76 : Cloudera 정책 변경으로 가상서버에 Cloudera Manager 설치 과정은 아래 파일의 내용을 참고해 진행
+           ==> 참조 파일 - [페이지 49~76]_가성서버 및 Cloudera Manager 설치.pdf
+
+2. Page 238:  yum install 명령시 "removing mirrorlist with no valid mirrors:.." 발생하면 아래 명령 실행
 
 echo "http://vault.centos.org/6.10/os/x86_64/" > /var/cache/yum/x86_64/6/base/mirrorlist.txt
 echo "http://vault.centos.org/6.10/extras/x86_64/" > /var/cache/yum/x86_64/6/extras/mirrorlist.txt
@@ -33,10 +36,10 @@ echo "http://vault.centos.org/6.10/updates/x86_64/" > /var/cache/yum/x86_64/6/up
 echo "http://vault.centos.org/6.10/sclo/x86_64/rh" > /var/cache/yum/x86_64/6/centos-sclo-rh/mirrorlist.txt
 echo "http://vault.centos.org/6.10/sclo/x86_64/sclo" > /var/cache/yum/x86_64/6/centos-sclo-sclo/mirrorlist.txt
 
-2. Page 238 : 3번째 라인에 yum install python-pip 설치가 실패할때 아래 명령으로 EPEL 저장소를 활성화
+3. Page 238 : 3번째 라인에 yum install python-pip 설치가 실패할때 아래 명령으로 EPEL 저장소를 활성화
           ==> $ yum --enablerepo=extras install epel-release
           
-3. Page 273 : "Tip_워크플로 즉시 실행하기"시 주제영역별(1-5) 워크플로의 매개변수 값은 아래의 내용을 참고해 입력
+4. Page 273 : "Tip_워크플로 즉시 실행하기"시 주제영역별(1-5) 워크플로의 매개변수 값은 아래의 내용을 참고해 입력
  - 주제영역1 : 플럼이 하둡에 적재한 날짜 
 	      (개인별 실행중인 파일럿의 현재 작업일자 값으로, 모를경우 하둡 적재경로인 "/pilot-pjt/collect/car-batch-log/wrk_date=YYYYMMDD"에 
 	       디렉토리의 날짜값을 참고. Server02에 접속해 아래의 명령으로 확인)
@@ -47,6 +50,6 @@ echo "http://vault.centos.org/6.10/sclo/x86_64/sclo" > /var/cache/yum/x86_64/6/c
  - 주제영역4 : 스마트카 시뮬레이션 잘짜(로그시뮬레이터 실행시 설정한 날짜로, 책기준 "20200322" 입력)
  - 주제영역5 : 미사용
 
-4. Page 283 : 그림 6.101 주제영역2 결과 확인 쿼리를 아래의 하이브 QL로 변경
+5. Page 283 : 그림 6.101 주제영역2 결과 확인 쿼리를 아래의 하이브 QL로 변경
   select * from Managed_SmartCar_drive_Info
   where biz_date = '20200322' limit 10;
