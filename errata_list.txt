@@ -53,3 +53,6 @@ echo "http://vault.centos.org/6.10/sclo/x86_64/sclo" > /var/cache/yum/x86_64/6/c
 5. Page 283 : 그림 6.101 주제영역2 결과 확인 쿼리를 아래의 하이브 QL로 변경
   select * from Managed_SmartCar_drive_Info
   where biz_date = '20200322' limit 10;
+  
+6. Page 379 : 03의 패키지 라이브러리 로드에서 library("log4r") 명령 추가
+  > 
