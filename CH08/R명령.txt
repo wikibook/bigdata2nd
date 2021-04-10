@@ -6,6 +6,7 @@
 > library("DBI")
 > library("rJava")
 > library("RJDBC")
+> library("log4r")
 
 > hive.class.path = list.files(path=c("C://hiveJar"), pattern="jar", full.names=T);
 > hadoop.lib.path = list.files(path=c("C://hadoopJar"), pattern="jar", full.names=T);
