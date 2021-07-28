@@ -55,4 +55,4 @@ echo "http://vault.centos.org/6.10/sclo/x86_64/sclo" > /var/cache/yum/x86_64/6/c
   where biz_date = '20200322' limit 10;
   
 6. Page 379 : 03의 패키지 라이브러리 로드에서 library("log4r") 명령 추가
-  > 
+  > library("log4r")
