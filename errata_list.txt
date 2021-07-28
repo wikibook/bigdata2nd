@@ -28,7 +28,7 @@
 1. Page 49~76 : Cloudera 정책 변경으로 가상서버에 Cloudera Manager 설치 과정은 아래 파일의 내용을 참고해 진행
            ==> 참조 파일 - [페이지 49~76]_가성서버 및 Cloudera Manager 설치.pdf
 
-2. Page 238:  yum install 명령시 "removing mirrorlist with no valid mirrors:.." 발생하면 아래 명령 실행
+2. Page 180:  yum install 명령시 "removing mirrorlist with no valid mirrors:.." 발생하면 아래 명령 실행
 
 echo "http://vault.centos.org/6.10/os/x86_64/" > /var/cache/yum/x86_64/6/base/mirrorlist.txt
 echo "http://vault.centos.org/6.10/extras/x86_64/" > /var/cache/yum/x86_64/6/extras/mirrorlist.txt
