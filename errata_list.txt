@@ -13,7 +13,7 @@
 4. Page 140 : 그림 4.4의 100GB → 100MB로 수정
 
 5. Page 332 : "그림 7.43 제플린 노트북 - 스파크 데이터 로드" 잘못 표기 됨. 
-           ==> "C://예제소스/bigdata2nd-master/CH07/Zeppelin-SparkSQL/그림-7.43.sql" 파일의 내용이 표기 되어야 함
+           ==> "//예제소스/bigdata2nd-master/CH07/Zeppelin-SparkSQL/그림-7.43.sql" 파일의 내용이 표기 되어야 함
 
 6. Page 333 : 상단의 "예제 7.1의 마지막 줄을.." ==> "그림 7.43 코드의 마지막 줄을.."로 변경
 
