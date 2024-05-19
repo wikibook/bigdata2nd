@@ -42,8 +42,11 @@ echo "http://vault.centos.org/6.10/sclo/x86_64/sclo" > /var/cache/yum/x86_64/6/c
 4. Page 238 : 파이썬 패키지인 psycopg2를 설치중 " certificate verify failed .." 관련 에러가 나면 아래 sessions.py 파일을 열고
 	# 325라인의 self.verify = True 를 False로 변경
          ==> $ vi /opt/rh/python27/root/usr/lib/python2.7/site-packages/pip/_vendor/requests/sessions.py
+
+5. Page 238 : 그림 6.28 에서 4번째의 선택항목
+         ===> 첫번째 레디오 버튼(HBase, HDFFS, Hive , Ooze , YARN(MR2 Included) , ZooKeeper) 선택
           
-5. Page 273 : "Tip_워크플로 즉시 실행하기"시 주제영역별(1-5) 워크플로의 매개변수 값은 아래의 내용을 참고해 입력
+6. Page 273 : "Tip_워크플로 즉시 실행하기"시 주제영역별(1-5) 워크플로의 매개변수 값은 아래의 내용을 참고해 입력
  - 주제영역1 : 플럼이 하둡에 적재한 날짜 
 	      (개인별 실행중인 파일럿의 현재 작업일자 값으로, 모를경우 하둡 적재경로인 "/pilot-pjt/collect/car-batch-log/wrk_date=YYYYMMDD"에 
 	       디렉토리의 날짜값을 참고. Server02에 접속해 아래의 명령으로 확인)
@@ -54,9 +57,9 @@ echo "http://vault.centos.org/6.10/sclo/x86_64/sclo" > /var/cache/yum/x86_64/6/c
  - 주제영역4 : 스마트카 시뮬레이션 잘짜(로그시뮬레이터 실행시 설정한 날짜로, 책기준 "20200322" 입력)
  - 주제영역5 : 미사용
 
-6. Page 283 : 그림 6.101 주제영역2 결과 확인 쿼리를 아래의 하이브 QL로 변경
+7. Page 283 : 그림 6.101 주제영역2 결과 확인 쿼리를 아래의 하이브 QL로 변경
   select * from Managed_SmartCar_drive_Info
   where biz_date = '20200322' limit 10;
   
-7. Page 379 : 03의 패키지 라이브러리 로드에서 library("log4r") 명령 추가
+8. Page 379 : 03의 패키지 라이브러리 로드에서 library("log4r") 명령 추가
   > library("log4r")
