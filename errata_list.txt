@@ -44,7 +44,7 @@ echo "http://vault.centos.org/6.10/sclo/x86_64/sclo" > /var/cache/yum/x86_64/6/c
          ==> $ vi /opt/rh/python27/root/usr/lib/python2.7/site-packages/pip/_vendor/requests/sessions.py
 
 5. Page 238 : 그림 6.28 에서 4번째의 선택항목
-         ===> 첫번째 레디오 버튼(HBase, HDFFS, Hive , Ooze , YARN(MR2 Included) , ZooKeeper) 선택
+         ===> 모든 컴포넌트를 포함된 레디오 버튼(HBase, HDFFS, Hive , Ooze , YARN(MR2 Included) , ZooKeeper) 선택
           
 6. Page 273 : "Tip_워크플로 즉시 실행하기"시 주제영역별(1-5) 워크플로의 매개변수 값은 아래의 내용을 참고해 입력
  - 주제영역1 : 플럼이 하둡에 적재한 날짜 
