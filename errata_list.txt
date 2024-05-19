@@ -40,7 +40,7 @@ echo "http://vault.centos.org/6.10/sclo/x86_64/sclo" > /var/cache/yum/x86_64/6/c
           ==> $ yum --enablerepo=extras install epel-release
 
 4. Page 238 : 파이썬 패키지인 psycopg2를 설치중 " certificate verify failed .." 관련 에러가 나면 아래 sessions.py 파일을 열고
-	# 325라인의 self.verify = False 를 True로 변경
+	# 325라인의 self.verify = True 를 False로 변경
          ==> $ vi /opt/rh/python27/root/usr/lib/python2.7/site-packages/pip/_vendor/requests/sessions.py
           
 5. Page 273 : "Tip_워크플로 즉시 실행하기"시 주제영역별(1-5) 워크플로의 매개변수 값은 아래의 내용을 참고해 입력
